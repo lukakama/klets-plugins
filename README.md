@@ -3,7 +3,7 @@ KLets plugin pack
 
 This is the repository project for new and experimental commands for KLets, translated in Italian and English.
 
-The project and its code is distributed under "GNU General Public License, Version 3" (see LICENSE-GPLv3.txt).
+The project and its code is distributed under "GNU General Public License, Version 3" (see license.txt).
 
 
 Why there is an open source plugin pack project for KLets?
