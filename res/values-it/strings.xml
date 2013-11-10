@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013 Luca De Petrillo.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+  
+  Contributors:
+      Luca De Petrillo - initial API and implementation
+-->
+<resources>
+	<string name="app_name">Plugin pack per KLets</string>
+	<string name="menu_settings">Opzioni</string>
+	
+	<!-- Foursquare action resources -->
+	<string name="action_foursquare_name">Foursquare</string>
+	<string name="action_foursquare_hint">checkin [nome luogo]</string>
+	<string name="action_foursquare_help">Consente di effettuare un checkin su Foursquare.\n
+\n
+Esempi:\n
+\"<b>checkin</b> Pizzeria MaMi!\"</string>
+ 
+	<string-array name="action_foursquare_commands">
+		<item>checkin</item>
+		<item>checkin [VENUE_NAME]</item>
+	</string-array>
+ 
+	<string name="action_foursquare_param_venue_name_help">Il luogo del checkin</string>
+	<string name="action_foursquare_param_venue_name_sample">Pizeria MaMi</string>
+	<string name="action_foursquare_param_venue_name_request">Per favore, detta il nome del luogo.</string>
+	
+	<string name="action_foursquare_language">it</string>
+	
+	<string name="action_foursquare_error_connect">Mi dispiace, ma per fare il checkin devi prima connettere questo plugin a Foursquare.</string>
+	<string name="action_foursquare_error_gps">Mi dispiace, ma per fer il checkin devi abilitare il GPS.</string>
+	<string name="action_foursquare_generic_error">Mi dispiace, ma si è verificaro un errore durante l\'esecuzione del comando. L\'azione è stata annullata.</string>
+	<string name="action_foursquare_api_error">Mi dispiace, ma si è verificato un errore in Foursquare. Per favore, riprova più tardi.</string>
+	<string name="action_foursquare_api_access_error">Mi dispiace, ma l\'autorizzazione di accesso a Foursquare è scaduta. Per usare il comando, devi ri-connettere il plugin a Foursquare.</string>
+	<string name="action_foursquare_complete">Checkin per \'%1$s\' effettuato con successo.</string>
+	<string name="action_foursquare_select_venue">Ho trovato %1$s luoghi in Foursquare. Dimmi in quale vuoi fare il checkin.</string>
+	<string name="action_foursquare_no_venues">Mi dispiace, ma non ho tovato nessun luogo nelle vicinanze per \'%1$s\'</string>
+	<string name="action_foursquare_not_location_found">Mi dispiace, ma non sono riuscito a trovare la tua posizione corrente. Per favore, riprova più tardi.</string>
+
+	<string name="action_foursquare_config_incompatible_error">Impossibile attivare la connessione a causa di una versione installata incopatibile di Foursquare. Per risolvere il problema, prova ad aggiornare Foursquare.</string>
+	<string name="action_foursquare_config_connection_error">Si è verificato un errore di autenticazione durante la connessione a Foursquare. Codice errore: %1$s</string>
+	<string name="action_foursquare_config_internal_error">Si è verificate un errore interno a Foursquare durante la connessione. Messaggio dell\'errore: %1$s</string>
+	<string name="action_foursquare_config_generic_error">Si è verificato un errore imprevisto durante la connessione. Messaggio dell\'errore: %1$s</string>
+	<string name="action_foursquare_config_already_connected">Foursquare è già connesso. Per forzare la ri-connessione, premi il pulsante sottostante.</string>
+	<string name="action_foursquare_config_connect_foursquare">Nessun account connesso a Foursquare. Connettiti usando il pulsante sottostante.</string>
+	<string name="action_foursquare_config_connect_button">Connetti Foursquare</string>
+	
+	
+	<!-- Contact action resources -->
+	<string name="action_contact_name">Contatto</string>
+	<string name="action_contact_hint">apri contatto, apri contatto [contatto] o apri il contatto [contatto] + [etichetta telefono]</string>
+	<string name="action_contact_help">Questa azione apre il dettaglio di un contatto.\n
+\n
+Esempi:\n
+\"<b>apri contatto</b> Paolo\"\n
+\"<b>apri il contatto</b> Mauro telefono\""</string>
+ 
+	<string-array name="action_contact_commands">
+		<item>apri contatto</item>
+		<item>apri contatto [CONTACT]</item>
+		<item>apri il contatto</item>
+		<item>apri il contatto [CONTACT]</item>
+	</string-array>
+ 
+	<string name="action_contact_param_contact_help">il nome del contatto</string>
+	<string name="action_contact_param_contact_sample">Paolo</string>
+	<string name="action_contact_param_contact_request">Per favore, dimmi il nome del contatto da aprire.</string>
+	<string name="action_contact_param_contact_notValid">Mi dispiace, ma non ho trovato nessun contatto con il nome \"%1$s\".</string>
+	<string name="action_contact_choose_contact_name">Quale contatto vuoi aprire?</string>
+</resources>

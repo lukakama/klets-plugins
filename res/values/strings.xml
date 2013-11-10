@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013 Luca De Petrillo.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+  
+  Contributors:
+      Luca De Petrillo - initial API and implementation
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<string name="app_name">Plugin pack for KLets</string>
+	<string name="menu_settings">Settings</string>
+	
+	<string name="default_languages" translatable="false">it,en</string>
+
+	<!-- Foursquare action resources -->
+	<string name="action_foursquare_name">Foursquare</string>
+	<string name="action_foursquare_hint">checkin to [place name]</string>
+	<string name="action_foursquare_help">Allows to perform a Foursquare checkin.\n
+\n
+Examples:\n
+\"<b>checkin to</b> Pizza Hut!\"</string>
+ 
+	<string-array name="action_foursquare_commands" tools:ignore="InconsistentArrays">
+		<item>checkin</item>
+		<item>check in</item>
+		<item>checkin to [VENUE_NAME]</item>
+		<item>check in to [VENUE_NAME]</item>
+	</string-array>
+ 
+	<string name="action_foursquare_param_venue_name_help">The place to checkin</string>
+	<string name="action_foursquare_param_venue_name_sample">Pizza Hut</string>
+	<string name="action_foursquare_param_venue_name_request">Please, tell me the place name.</string>
+	
+	<string name="action_foursquare_language">en</string>
+	
+	<string name="action_foursquare_error_connect">Sorry, in order to checkin to a venue, you first need to connect this plugin to Foursquare.</string>
+	<string name="action_foursquare_error_gps">Sorry, in order to checkin to a venue, you need to enable the GPS.</string>
+	<string name="action_foursquare_generic_error">Sorry, an error occurred while performing the Foursquare command. Action aborted.</string>
+	<string name="action_foursquare_api_error">Sorry, an unexpected Foursquare error occurred. Plase try again later.</string>
+	<string name="action_foursquare_api_access_error">Sorry, but Foursquare connection authorization has been expired. You need to re-connect this plugin to Foursquare to perform the requested command.</string>
+	<string name="action_foursquare_complete">Checkin to \'%1$s\' performed successfully.</string>
+	<string name="action_foursquare_select_venue">I found %1$s venues into foursquare. Tell me which one to use for checkin.</string>
+	<string name="action_foursquare_no_venues">Sorry, no near venues found with the name \'%1$s\'</string>
+	<string name="action_foursquare_not_location_found">I\'m sorry, but I was not able to find your current location. Plase try again later.</string>
+	
+	<string name="action_foursquare_config_incompatible_error">Cannot connect due an incompatible Foursquare app version installed. To solve this problem, try to update Foursquare app.</string>
+	<string name="action_foursquare_config_connection_error">Foursquare authentication error occurred while connectig. Error code: %1$s</string>
+	<string name="action_foursquare_config_internal_error">Foursquare internal error occurred while connectig. Error message: %1$s</string>
+	<string name="action_foursquare_config_generic_error">Unexpected error occurred while connectig. Error message: %1$s</string>
+	<string name="action_foursquare_config_already_connected">Foursquare already connected. To force re-connection, press the button below.</string>
+	<string name="action_foursquare_config_connect_foursquare">No account connected to Foursquare. Please connect it using the button below</string>
+	<string name="action_foursquare_config_connect_button">Connect to Foursquare</string>
+	
+
+	<!-- Contact action resources -->
+	<string name="action_contact_name">Open Contact</string>
+	<string name="action_contact_hint">open contact, open contact [contact] or open contact [contact] + [phone label]</string>
+	<string name="action_contact_help">This action allows to open a contact detail screen.\n
+\n
+Examples:\n
+\"<b>open contact</b> Paul\"\n
+\"<b>open contact</b> George mobule\""</string>
+ 
+	<string-array name="action_contact_commands" tools:ignore="InconsistentArrays">
+		<item>open contact</item>
+		<item>open contact [CONTACT]</item>
+	</string-array>
+ 
+	<string name="action_contact_param_contact_help">the contact name</string>
+	<string name="action_contact_param_contact_sample">Paul</string>
+	<string name="action_contact_param_contact_request">Please, tell me the name of the contact to open.</string>
+	<string name="action_contact_param_contact_notValid">I\'m sorry, but I didn\'t found a valid contact with the name \"%1$s\".</string>
+	<string name="action_contact_choose_contact_name">Which contact should I need to open?</string>
+</resources>

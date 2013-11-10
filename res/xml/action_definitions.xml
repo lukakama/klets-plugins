@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2013 Luca De Petrillo.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+  
+  Contributors:
+      Luca De Petrillo - initial API and implementation
+-->
+<actions xmlns:vc="http://api.voicecontrolapp.com/actions"
+    vc:pluginSpecVersion="1.0">
+    
+	<action vc:id="foursquareAction" 
+			vc:name="@string/action_foursquare_name" 
+			vc:help="@string/action_foursquare_help"
+			vc:hint="@string/action_foursquare_hint"
+			vc:commands="@array/action_foursquare_commands"
+			vc:languages="@string/default_languages"
+			vc:configIntent="com.voicecontrolapp.pluginpack.ACTION_FOURSQUARE_CONFIG_INTENT">
+		<!-- 
+			Venues are retrieved using a remote lookup, so we need to use a free-text type, because we cannot per-filter
+			accepted values. 
+		-->
+		<param vc:id="VENUE_NAME" 
+				vc:type="TEXT" 
+				vc:help="@string/action_foursquare_param_venue_name_help"
+				vc:sample="@string/action_foursquare_param_venue_name_sample"
+				vc:request="@string/action_foursquare_param_venue_name_request"/>
+	</action>
+	
+	
+	
+	<action vc:id="contactAction" 
+			vc:name="@string/action_contact_name" 
+			vc:help="@string/action_contact_help"
+			vc:commands="@array/action_contact_commands"
+			vc:languages="@string/default_languages">
+		
+		<param vc:id="CONTACT" 
+				vc:type="CONTACT" 
+				vc:help="@string/action_contact_param_contact_help"
+				vc:sample="@string/action_contact_param_contact_sample"
+				vc:request="@string/action_contact_param_contact_request"
+				vc:notValid="@string/action_contact_param_contact_notValid"/>
+	</action>
+</actions>
