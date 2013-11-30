@@ -12,6 +12,8 @@
 <resources>
 	<string name="app_name">Plugin pack per KLets</string>
 	<string name="menu_settings">Opzioni</string>
+	<string name="title_user_support">Supporto utente</string>
+	
 	
 	<!-- Foursquare action resources -->
 	<string name="action_foursquare_name">Foursquare</string>

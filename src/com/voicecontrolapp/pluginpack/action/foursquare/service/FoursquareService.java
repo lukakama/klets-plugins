@@ -281,7 +281,7 @@ public class FoursquareService extends IntentService {
 		URL url = new URL(builder.build().toString());
 		
 		FoursquareBaseResponse response = HttpUtils.getJson(Method.POST, url, FoursquareBaseResponse.class);
-		if (!handleResponseErrors(asyncPendingIntent, response)) {
+		if (handleResponseErrors(asyncPendingIntent, response)) {
 			return;
 		}
 		
@@ -368,8 +368,7 @@ public class FoursquareService extends IntentService {
 	
 	private void sendResult(PendingIntent asyncPendingIntent, int resultCode, Bundle resultExtras) {
 		try {
-			asyncPendingIntent.send(getApplicationContext(), KletsPluginApi.ACTION_RESULT_OK,
-					(new Intent()).putExtras(resultExtras));
+			asyncPendingIntent.send(getApplicationContext(), resultCode, (new Intent()).putExtras(resultExtras));
 		} catch (CanceledException cancelEx) {
 			// This pending intent has been canceled. We don't need to notify the error to KLets anymore.
 		}

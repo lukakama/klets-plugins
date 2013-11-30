@@ -60,35 +60,29 @@ public class FoursquareActivityConfig extends FragmentActivity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		switch (requestCode) {
-			case REQUEST_CODE_FSQ_CONNECT:
-				AuthCodeResponse codeResponse = FoursquareOAuth.getAuthCodeFromResult(resultCode, data);
-	
-				if (codeResponse.getException() == null) {
-					Intent intent = FoursquareOAuth.getTokenExchangeIntent(this, BuildConfig.FOURSQUARE_OAUTH_APP_ID,
-							BuildConfig.FOURSQUARE_OAUTH_APP_SECRET, codeResponse.getCode());
-					startActivityForResult(intent, REQUEST_CODE_FSQ_TOKEN_EXCHANGE);
-	
-				} else {
-					handleFoursquareError(codeResponse.getException());
-				}
-	
-				break;
-	
-			case REQUEST_CODE_FSQ_TOKEN_EXCHANGE:
-				AccessTokenResponse tokenResponse = FoursquareOAuth.getTokenFromResult(resultCode, data);
-	
-				if (tokenResponse.getException() == null) {
-					SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-					Editor editor = pref.edit();
-					editor.putString("foursquareAuthToken", tokenResponse.getAccessToken());
-					editor.commit();
-	
-					refreshFoursquareText();
-				} else {
-					handleFoursquareError(tokenResponse.getException());
-				}
-				break;
+		if (requestCode == REQUEST_CODE_FSQ_CONNECT) {
+			AuthCodeResponse codeResponse = FoursquareOAuth.getAuthCodeFromResult(resultCode, data);
+			if (codeResponse.getException() == null) {
+				Intent intent = FoursquareOAuth.getTokenExchangeIntent(this, BuildConfig.FOURSQUARE_OAUTH_APP_ID,
+						BuildConfig.FOURSQUARE_OAUTH_APP_SECRET, codeResponse.getCode());
+				startActivityForResult(intent, REQUEST_CODE_FSQ_TOKEN_EXCHANGE);
+
+			} else {
+				handleFoursquareError(codeResponse.getException());
+			}
+			
+		} else if (requestCode == REQUEST_CODE_FSQ_TOKEN_EXCHANGE) {
+			AccessTokenResponse tokenResponse = FoursquareOAuth.getTokenFromResult(resultCode, data);
+			if (tokenResponse.getException() == null) {
+				SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+				Editor editor = pref.edit();
+				editor.putString("foursquareAuthToken", tokenResponse.getAccessToken());
+				editor.commit();
+
+				refreshFoursquareText();
+			} else {
+				handleFoursquareError(tokenResponse.getException());
+			}
 		}
 	}
 
@@ -114,7 +108,7 @@ public class FoursquareActivityConfig extends FragmentActivity {
 		// onSaveInstanceState " exception when a it is shown in a stack handling a "onActivityResult" callback.
 		// As a workaround, we use the obsolete but well-working AlertDialog system.
 		new AlertDialog.Builder(this)
-			.setTitle("User support")
+			.setTitle(R.string.title_user_support)
 			.setMessage(message)
 			.setCancelable(true)
 			.setPositiveButton(android.R.string.ok, null)
