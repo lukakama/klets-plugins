@@ -61,7 +61,7 @@ public class FoursquareService extends IntentService {
 		
 		// Ensure that Android doesn't kill this service, otherwise KLets will hang waiting for an intent that nobody 
 		// will ever send. 
-		Notification notification = new Notification(R.drawable.ic_notification, getText(R.string.app_name), 
+		Notification notification = new Notification(R.drawable.ic_notification_main, getText(R.string.app_name), 
 				System.currentTimeMillis());
 		notification.setLatestEventInfo(getApplicationContext(), getString(R.string.app_name), getText(R.string.app_name),
 				null);

@@ -15,7 +15,7 @@
 
 	<groupId>com.voicecontrolapp</groupId>
 	<artifactId>klets-pluginpack</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<packaging>apk</packaging>
 
@@ -85,11 +85,9 @@
 		
 		<!-- Support library taken from Android SDK -->
 		<dependency>
-			<groupId>android.support</groupId>
+			<groupId>com.voicecontrolapp.libs.android.support</groupId>
 			<artifactId>compatibility-v4</artifactId>
 			<version>19</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/libs/android-support-v4_19.jar</systemPath>
 		</dependency>
 		
 		<dependency>
@@ -166,7 +164,8 @@
 
 					<proguardFile>${project.build.directory}/proguard/additional-proguard.cfg</proguardFile>
 					<proguard>
-						<config>${project.parent.basedir}/proguard.cfg</config>
+						<skip>false</skip>
+						<config>${project.basedir}/proguard.cfg</config>
 						<configs>
 							<config>"${env.ANDROID_HOME}/tools/proguard/proguard-android-optimize.txt"</config>
 						</configs>
@@ -340,4 +339,12 @@
 			<url>http://www.voicecontrolapp.com:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
+	<repositories>
+		<repository>
+			<id>project.local</id>
+			<name>project</name>
+			<url>file://${project.basedir}/libs/repo</url>
+		</repository>
+	</repositories>
 </project>

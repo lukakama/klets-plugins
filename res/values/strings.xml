@@ -11,7 +11,7 @@
 -->
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-	<string name="app_name">Plugin pack for KLets</string>
+	<string name="app_name">KLets - Plugin Pack</string>
 	<string name="menu_settings">Settings</string>
 	<string name="title_user_support">User support</string>
 	
