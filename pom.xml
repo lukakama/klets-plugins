@@ -27,7 +27,7 @@
 			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
 		</license>
 	</licenses>
-	
+
 	<properties>
 		<!-- 
 		Declare and configure the following properties either in this pom or in a local or global maven profile.
@@ -46,12 +46,12 @@
 	</properties>
 
 	<dependencies>
-	    <dependency>
+		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
 			<version>4.1.1.4</version>
-	      <scope>provided</scope>
-	    </dependency>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>com.voicecontrolapp</groupId>
@@ -64,7 +64,7 @@
 			<artifactId>gson</artifactId>
 			<version>2.2.1</version>
 		</dependency>
-		
+
 		<!-- 
 			Foursquare didn't released the parent pom used by this artifact on global maven repositories, so you
 			need to checkout the project source code from https://github.com/foursquare/foursquare-android-oauth,
@@ -82,14 +82,14 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!-- Support library taken from Android SDK -->
 		<dependency>
 			<groupId>com.voicecontrolapp.libs.android.support</groupId>
 			<artifactId>compatibility-v4</artifactId>
 			<version>19</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.google.android.annotations</groupId>
 			<artifactId>annotations</artifactId>
@@ -103,6 +103,51 @@
 		<sourceDirectory>src</sourceDirectory>
 
 		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<version>1.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>create-timestamp</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+				  <timestampFormat>yyMMddHHmm</timestampFormat>
+				  <timestampPropertyName>versionCode</timestampPropertyName>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>copy-manifest</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/filtered-manifest/</outputDirectory>
+							<includeEmptyDirs>true</includeEmptyDirs>
+							<resources>          
+								<resource>
+									<directory>.</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>AndroidManifest.xml</include>
+									</includes>
+								</resource>
+							</resources>              
+						</configuration>            
+					</execution>
+				</executions>
+			</plugin>
+			
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
@@ -111,6 +156,32 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>	
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jarsigner-plugin</artifactId>
+				<version>1.2</version>
+				<executions>
+					<execution>
+						<id>signing</id>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+						<phase>package</phase>
+						<inherited>true</inherited>
+						<configuration>
+							<keystore>${signKeystore}</keystore>
+							<storepass>${signKeystorePwd}</storepass>
+							<alias>${signAlias}</alias>
+							<keypass>${signPwd}</keypass>
+							<archiveDirectory />
+							<includes>
+								<include>target/*.apk</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
@@ -188,37 +259,15 @@
 							<value>${foursquareAppSecret}</value>
 						</constant>
 					</buildConfigConstants>
-				</configuration>
-			</plugin>
+					
+					
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jarsigner-plugin</artifactId>
-				<version>1.2</version>
-				<executions>
-					<execution>
-						<id>signing</id>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-						<phase>package</phase>
-						<inherited>true</inherited>
-						<configuration>
-							<keystore>${signKeystore}</keystore>
-							<storepass>${signKeystorePwd}</storepass>
-							<alias>${signAlias}</alias>
-							<keypass>${signPwd}</keypass>
-							<archiveDirectory />
-							<includes>
-								<include>target/*.apk</include>
-							</includes>
-						</configuration>
-					</execution>
-				</executions>
+					<androidManifestFile>${project.build.directory}/filtered-manifest/AndroidManifest.xml</androidManifestFile>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<profiles>
 		<!-- Configuration for eclipse development -->
 		<profile>
@@ -228,7 +277,7 @@
 					<name>m2e.version</name>
 				</property>
 			</activation>
-			
+
 			<build>
 				<plugins>
 					<!-- 
@@ -246,7 +295,7 @@
 						</configuration>
 					</plugin>
 				</plugins>
-				
+
 				<pluginManagement>
 					<plugins>
 						<plugin>
@@ -269,7 +318,7 @@
 												<ignore/>
 											</action>
 										</pluginExecution>
-										
+
 										<pluginExecution>
 											<pluginExecutionFilter>
 												<groupId>com.jayway.maven.plugins.android.generation2</groupId>
@@ -286,7 +335,7 @@
 												</execute>
 											</action>
 										</pluginExecution>
-										
+
 										<pluginExecution>
 											<pluginExecutionFilter>
 												<groupId>org.apache.maven.plugins</groupId>
@@ -313,7 +362,7 @@
 												</goals>
 											</pluginExecutionFilter>
 											<action>
-												<ignore></ignore>
+												<ignore/>
 											</action>
 										</pluginExecution>
 									</pluginExecutions>
@@ -325,7 +374,7 @@
 			</build>
 		</profile>
 	</profiles>
-	
+
 	<distributionManagement>
 		<!-- Using private repository for KLets api (until it is released on maven public repos) -->
 		<repository>
@@ -339,7 +388,7 @@
 			<url>http://www.voicecontrolapp.com:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
+
 	<repositories>
 		<repository>
 			<id>project.local</id>
