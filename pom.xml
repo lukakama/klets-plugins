@@ -15,7 +15,7 @@
 
 	<groupId>com.voicecontrolapp</groupId>
 	<artifactId>klets-pluginpack</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 
 	<packaging>apk</packaging>
 
@@ -178,6 +178,12 @@
 							<includes>
 								<include>target/*.apk</include>
 							</includes>
+							<arguments>
+								<argument>-sigalg</argument>
+								<argument>SHA1withRSA</argument>
+								<argument>-digestalg</argument>
+								<argument>SHA1</argument>
+							</arguments>
 						</configuration>
 					</execution>
 				</executions>
