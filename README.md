@@ -23,6 +23,10 @@ In order to provide acceptable delivery times and to remove delays, commands ins
 
 However, everyone can easily fork this repository in order to maintain and release it in other languages.
 
+How to insall
+--------
+The Plugin Pack can be installed from the Play Store here: https://play.google.com/store/apps/details?id=com.voicecontrolapp.pluginpack
+
 
 How to build the project
 --------
