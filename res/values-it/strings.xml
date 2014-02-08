@@ -14,6 +14,7 @@
 	<string name="menu_settings">Opzioni</string>
 	<string name="title_user_support">Supporto utente</string>
 	
+	<string name="placesLanguage">it</string>
 	
 	<!-- Foursquare action resources -->
 	<string name="action_foursquare_name">Foursquare</string>
@@ -74,4 +75,189 @@ Esempi:\n
 	<string name="action_contact_param_contact_request">Per favore, dimmi il nome del contatto da aprire.</string>
 	<string name="action_contact_param_contact_notValid">Mi dispiace, ma non ho trovato nessun contatto con il nome \"%1$s\".</string>
 	<string name="action_contact_choose_contact_name">Quale contatto vuoi aprire?</string>
+	<string name="action_contact_choose_contact_name">Which contact should I need to open?</string>
+	
+	<!-- Weather action resources -->
+	<string name="action_weather_name">Previsioni</string>
+	<string name="action_weather_hint">meteo di [place name]</string>
+	<string name="action_weather_help">Consente di controllare le previsioni del tempo.\n
+\n
+Esempi:\n
+\"<b>Meteo di</b> Roma\"\n
+\"<b>Meteo per</b> domain\"\n
+\"<b>Meteo di</b> Roma <b>per </b> domani\"</string>
+ 
+	<string-array name="action_weather_commands">
+		<item>meteo</item>
+		<item>meteo di [DATE]</item>
+		<item>meteo di [DATE] per [PLACE_NAME]</item>
+		<item>meteo di [PLACE_NAME]</item>
+		<item>meteo di [PLACE_NAME] per [DATE]</item>
+		<item>meteo di [PLACE_NAME] per il [DATE]</item>
+		<item>meteo per [DATE]</item>
+		<item>meteo per [DATE] di [PLACE_NAME]</item>
+		<item>meteo per il [DATE]</item>
+		<item>meteo per il [DATE] di [PLACE_NAME]</item>
+		<item>meteo per [PLACE_NAME]</item>
+		<item>meteo per [PLACE_NAME] di [DATE]</item>
+		
+		<item>meteo di [DATE] di [PLACE_NAME]</item>
+		<item>meteo di [PLACE_NAME] di [DATE]</item>
+		<item>meteo per [DATE] per [PLACE_NAME]</item>
+		<item>meteo per il [DATE] per [PLACE_NAME]</item>
+		<item>meteo per [PLACE_NAME] per [DATE]</item>
+	</string-array>
+ 
+	<string name="action_weather_param_place_name_help">Il posto da controllare</string>
+	<string name="action_weather_param_place_name_sample">Roma</string>
+
+	<string name="action_weather_param_date_help">La data per le previsioni</string>
+	<string name="action_weather_param_date_sample">domani</string>
+	
+	<string name="action_weather_language">it</string>
+	
+	<string name="action_weather_error_gps">Mi dispiace, ma per controllare il meteo devi attivare il GPS.</string>
+	<string name="action_weather_generic_error">Mi dispiace, ma si è verificaro un errore durante l\'esecuzione del comando. L\'azione è stata annullata.</string>
+	<string name="action_weather_select_place">Quale luogo vuoi controllare?</string>
+	<string name="action_weather_no_places">Mi dispiace, ma non ho trovvato nessun luogo con il nome \'%1$s\'</string>
+	<string name="action_weather_not_location_found">Mi dispiace, ma non sono riuscito a trovare la tua posizione corrente. Per favore, riprova più tardi.</string>
+	
+	
+	<string name="action_weather_forecast_today">Le previsioni del tempo di oggi per %1$s sono: %2$s</string>
+	<string name="action_weather_forecast_tomorrow">Le previsioni del tempo di domani per %1$s sono: %2$s</string>
+	<string name="action_weather_forecast_date">Le previsioni del tempo del %1$te %1$tB %1$tY per %2$s sono: %3$s</string>
+	
+	<!-- List extracted from http://www.worldweatheronline.com/feed/wwoConditionCodes.txt -->
+	<string-array name="action_weather_codes">
+		<item>395|nevicate sparse da moderate a intense con temporali</item>
+		<item>392|nevicate leggere sparse con temporali</item>
+		<item>389|piogge sparse da moderate a intense con temporali</item>
+		<item>386|piogge leggere sparse con temporali</item>
+		<item>377|pioggia ghiacciata moderata o intensa</item>
+		<item>374|pioggia ghiacciata leggiera</item>
+		<item>371|nevicata da moderata a intensa</item>
+		<item>368|nevicata leggera</item>
+		<item>365|nevischio da moderato a intenso con pioggia</item>
+		<item>362|nevischio leggero con pioggia</item>
+		<item>359|pioggia torrenziale</item>
+		<item>356|pioggia da moderata a intensa</item>
+		<item>353|pioggia leggera</item>
+		<item>350|pioggia ghiacciata</item>
+		<item>338|forte nevicata</item>
+		<item>335|nevicate intense sparse</item>
+		<item>332|nevicata moderata</item>
+		<item>329|nevicate moderate sparse</item>
+		<item>326|nevicata leggera</item>
+		<item>323|nevicate leggere sparse</item>
+		<item>320|nevischio da moderato a intenso</item>
+		<item>317|nevischio leggero</item>
+		<item>314|pioggia congelatensi da moderata a intensa</item>
+		<item>311|pioggia congelatensi leggera</item>
+		<item>308|pioggia intensa</item>
+		<item>305|pioggia intensa intermittente</item>
+		<item>302|pioggia moderata</item>
+		<item>299|pioggia moderata intermittente</item>
+		<item>296|pioggia leggera</item>
+		<item>293|leggere piogge sparse</item>
+		<item>284|leggera pioviggine congelatensi</item>
+		<item>281|pioviggine congelatensi</item>
+		<item>266|leggera pioviggine</item>
+		<item>263|leggere pioviggini sparse</item>
+		<item>260|nebbia congelatensi</item>
+		<item>248|nebbia</item>
+		<item>230|tormenta</item>
+		<item>227|tempesta di neve</item>
+		<item>200|temporali improvvisi nelle vicinanze</item>
+		<item>185|pioviggini congelatensi sparse nelle vicinanze</item>
+		<item>182|nevischi sparsi nelle vicinanze</item>
+		<item>179|nevicate sparse nelle vicinanze</item>
+		<item>176|piogge sparse nelle vicinanze</item>
+		<item>143|foschia</item>
+		<item>122|coperto</item>
+		<item>119|nuvoloso</item>
+		<item>116|parzialmente nuvoloso</item>
+		<item>113|soleggiato</item>
+	</string-array>
+	
+	<!-- Audio actions -->
+	<string-array name="action_sound_volume_up_commands">
+		<item>aumenta volume</item>
+		<item>aumenta il volume</item>
+		<item>volume su</item>
+	</string-array>
+	<string name="action_sound_volume_up_name">Audio - Volume su</string>
+	<string name="action_sound_volume_up_hint">aumenta volume</string>
+	<string name="action_sound_volume_up_help">Aumenta il volume di musica, sistema e allarmi.\n
+\n
+Esempi:\n
+\"<b>aumenta volume</b>\"</string>
+
+	<string-array name="action_sound_volume_down_commands">
+		<item>abbassa volume</item>
+		<item>abbassa il volume</item>
+		<item>volume giù</item>
+	</string-array>
+	<string name="action_sound_volume_down_name">Audio - Volume giù</string>
+	<string name="action_sound_volume_down_hint">abbassa volume</string>
+	<string name="action_sound_volume_down_help">Abbassa il volume di musica, sistema e allarmi.\n
+\n
+Esempi:\n
+\"<b>abbassa volume</b>\"</string>
+
+
+	<string-array name="action_sound_volume_set_commands">
+		<item>imposta volume</item>
+		<item>imposta il volume</item>
+		<item>imposta il volume a [VOLUME]</item>
+	</string-array>
+	<string name="action_sound_volume_set_name">Audio - Imposta livello volume</string>
+	<string name="action_sound_volume_set_hint">imposta il volume a [volume level]</string>
+	<string name="action_sound_volume_set_help">Imposta il volume di musica, sistema e allarmi da 0 (minimo) a 100 (massimo).\n
+\n
+Esempi:\n
+\"<b>imposta il volume a</b> 90\"</string>
+
+	<string name="action_sound_volume_set_param_volume_help">Il livello del volume (da 0 a 100)</string>
+	<string name="action_sound_volume_set_param_volume_sample">90</string>
+	<string name="action_sound_volume_set_param_volume_request">Dimmi il lovello da 0 a 100.</string>
+	
+
+	<string-array name="action_sound_volume_max_commands">
+		<item>volume massimo</item>
+		<item>volume al massimo</item>
+	</string-array>
+	<string name="action_sound_volume_max_name">Audio - Volume massimo</string>
+	<string name="action_sound_volume_max_hint">volume massimo</string>
+	<string name="action_sound_volume_max_help">Imposta al massimo il volume di musica, sistema e allarmi.\n
+\n
+Esempi:\n
+\"<b>volume massimo</b>\"</string>
+	
+
+	<string-array name="action_sound_profile_set_commands">
+		<item>imposta profilo audio a [PROFILE]</item>
+		<item>imposta profilo [PROFILE]</item>
+		<item>attiva profilo [PROFILE]</item>
+	</string-array>
+	<string name="action_sound_profile_set_name">Audio - Imposta profilo</string>
+	<string name="action_sound_profile_set_hint">check the weather for [place name]</string>
+	<string name="action_sound_profile_set_help">Imposta il profilo audio a normale, silenzioso o vibrazione.\n
+\n
+Esempi:\n
+\"<b>attiva profilo</b> silenzioso\"\n
+\"<b>imposta profilo</b> normale\"\n
+\"<b>imposta profilo audio a</b> vibrazione\"</string>
+
+	<string name="action_sound_profile_set_param_profile_help">Il profilo da impostare tra normale, silenzioso e vibrazione</string>
+	<string name="action_sound_profile_set_param_profile_sample">normale</string>
+	<string name="action_sound_profile_set_param_profile_request">Dimmi il profilo da impostare.</string>
+	
+	<string name="action_sound_profile_set_param_profile_val_silent">silenzioso</string>
+	<string name="action_sound_profile_set_param_profile_val_vibrate">vibrazione</string>
+	<string name="action_sound_profile_set_param_profile_val_normal">normale</string>
+	
+	
+	<string name="action_sound_volume_confirm_message">Volume cambiato</string>
+	<string name="action_sound_profile_confirm_message">Profilo impostato</string>
 </resources>
+

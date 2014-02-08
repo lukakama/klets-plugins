@@ -15,7 +15,7 @@
 
 	<groupId>com.voicecontrolapp</groupId>
 	<artifactId>klets-pluginpack</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 
 	<packaging>apk</packaging>
 
@@ -34,6 +34,10 @@
 		
 		<foursquareAppId>YOUR_FOURSQUARE_APP_ID</foursquareAppId>
 		<foursquareAppSecret>YOUR_FOURSQUARE_APP_SECRET</foursquareAppSecret>
+				
+		<googlePlacesKey>YOUR_GOOGLE_PLACES_API_KEY</googlePlacesKey>
+		
+		<weatherKey>YOUR_WORLD_WEATHER_ONLINE_API_KEY</weatherKey>
 			
 			
 		Set these to sign the APK, or comment out the sign-jar plugin.
@@ -263,6 +267,16 @@
 							<name>FOURSQUARE_OAUTH_APP_SECRET</name>
 							<type>String</type>
 							<value>${foursquareAppSecret}</value>
+						</constant>
+						<constant>
+							<name>GOOGLE_PLACES_KEY</name>
+							<type>String</type>
+							<value>${googlePlacesKey}</value>
+						</constant>
+						<constant>
+							<name>WEATHER_KEY</name>
+							<type>String</type>
+							<value>${weatherKey}</value>
 						</constant>
 					</buildConfigConstants>
 					

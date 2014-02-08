@@ -23,6 +23,8 @@ import com.voicecontrolapp.klets.api.KletsPluginApi;
 import com.voicecontrolapp.pluginpack.action.PluginAction;
 import com.voicecontrolapp.pluginpack.action.contact.ContactPluginAction;
 import com.voicecontrolapp.pluginpack.action.foursquare.FoursquarePluginAction;
+import com.voicecontrolapp.pluginpack.action.sound.SoundPluginAction;
+import com.voicecontrolapp.pluginpack.action.weather.WeatherPluginAction;
 
 /**
  * This {@link BroadcastReceiver} act as a gateway redirecting calls to the right action handler.
@@ -40,6 +42,13 @@ public class PluginActionReceiver extends BroadcastReceiver {
 		pluginDictionary = new HashMap<String, PluginAction>();
 		pluginDictionary.put("foursquareAction", new FoursquarePluginAction());
 		pluginDictionary.put("contactAction", new ContactPluginAction());
+		pluginDictionary.put("weatherAction", new WeatherPluginAction());
+
+		pluginDictionary.put("soundVolumeUp", new SoundPluginAction());
+		pluginDictionary.put("soundVolumeDown", new SoundPluginAction());
+		pluginDictionary.put("soundVolumeSet", new SoundPluginAction());
+		pluginDictionary.put("soundVolumeMax", new SoundPluginAction());
+		pluginDictionary.put("soundProfileSet", new SoundPluginAction());
 	}
 
 	@Override

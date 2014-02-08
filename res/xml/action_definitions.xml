@@ -45,4 +45,67 @@
 				vc:request="@string/action_contact_param_contact_request"
 				vc:notValid="@string/action_contact_param_contact_notValid"/>
 	</action>
+    
+	
+	
+	<action vc:id="weatherAction" 
+			vc:name="@string/action_weather_name" 
+			vc:help="@string/action_weather_help"
+			vc:hint="@string/action_weather_hint"
+			vc:commands="@array/action_weather_commands"
+			vc:languages="@string/default_languages">
+		<param vc:id="PLACE_NAME" 
+				vc:type="TEXT" 
+				vc:help="@string/action_weather_param_place_name_help"
+				vc:sample="@string/action_weather_param_place_name_sample"/>
+		
+		<param vc:id="DATE" 
+				vc:type="DATE_TIME" 
+				vc:help="@string/action_weather_param_date_help"
+				vc:sample="@string/action_weather_param_date_sample"/>
+	</action>
+	
+	<!-- Volume actions -->
+	<action vc:id="soundVolumeUp" 
+		vc:name="@string/action_sound_volume_up_name" 
+		vc:help="@string/action_sound_volume_up_help"
+		vc:hint="@string/action_sound_volume_up_hint"
+		vc:commands="@array/action_sound_volume_up_commands"
+		vc:languages="@string/default_languages"/>
+	<action vc:id="soundVolumeDown" 
+		vc:name="@string/action_sound_volume_down_name" 		vc:help="@string/action_sound_volume_down_help"
+		vc:hint="@string/action_sound_volume_down_hint"
+		vc:commands="@array/action_sound_volume_down_commands"
+		vc:languages="@string/default_languages"/>
+	<action vc:id="soundVolumeSet" 
+		vc:name="@string/action_sound_volume_set_name" 
+		vc:help="@string/action_sound_volume_set_help"
+		vc:hint="@string/action_sound_volume_set_hint"
+		vc:commands="@array/action_sound_volume_set_commands"
+		vc:languages="@string/default_languages">
+		<param vc:id="VOLUME" 
+				vc:type="NUMBER" 
+				vc:help="@string/action_sound_volume_set_param_volume_help"
+				vc:sample="@string/action_sound_volume_set_param_volume_sample"
+				vc:request="@string/action_sound_volume_set_param_volume_request"/>
+	</action>
+	<action vc:id="soundVolumeMax" 
+		vc:name="@string/action_sound_volume_max_name" 
+		vc:help="@string/action_sound_volume_max_help"
+		vc:hint="@string/action_sound_volume_max_hint"
+		vc:commands="@array/action_sound_volume_max_commands"
+		vc:languages="@string/default_languages"/>
+	<action vc:id="soundProfileSet" 
+		vc:name="@string/action_sound_profile_set_name" 
+		vc:help="@string/action_sound_profile_set_help"
+		vc:hint="@string/action_sound_profile_set_hint"
+		vc:commands="@array/action_sound_profile_set_commands"
+		vc:languages="@string/default_languages">
+		<param vc:id="PROFILE" 
+				vc:type="SOUND_PROFILE_TYPE" 
+				vc:help="@string/action_sound_profile_set_param_profile_help"
+				vc:sample="@string/action_sound_profile_set_param_profile_sample"
+				vc:request="@string/action_sound_profile_set_param_profile_request"/>
+	</action>
+	
 </actions>

@@ -11,8 +11,8 @@
 <dataTypes xmlns:vc="http://api.voicecontrolapp.com/data_types"
     vc:pluginSpecVersion="1.0">
     
-	<dataType vc:id="CUSTOM_DATA_TYPE" 
-	    vc:providerAuthority="com.voicecontrolapp.pluginpack.custom_type"
+	<dataType vc:id="SOUND_PROFILE_TYPE" 
+	    vc:providerAuthority="com.voicecontrolapp.pluginpack.sound.profile_type"
 	    vc:idField="ID_FIELD"
 	    vc:textField="TEXT_FIELD"/>
 </dataTypes>

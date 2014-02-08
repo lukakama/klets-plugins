@@ -16,7 +16,7 @@
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 
-	<application android:allowBackup="true" android:debuggable="false" android:icon="@drawable/ic_launcher_main" android:label="@string/app_name">
+	<application android:allowBackup="true" android:icon="@drawable/ic_launcher_main" android:label="@string/app_name">
 	   <!-- Foursquare Config Activity -->
 		<activity android:name="com.voicecontrolapp.pluginpack.action.foursquare.activity.FoursquareActivityConfig">
 			<intent-filter>
@@ -33,7 +33,10 @@
 				
 		<!-- Foursquare API Activity -->
 		<activity android:name="com.foursquare.android.nativeoauth.TokenExchangeActivity" android:theme="@android:style/Theme.Dialog"/>
+
 		
+		<!-- Weather Background Service -->
+		<service android:name="com.voicecontrolapp.pluginpack.action.weather.service.WeatherService"/>
 		
 		<!-- Main entry-point for plugin action executions -->
 		<receiver android:exported="true" android:name="com.voicecontrolapp.pluginpack.PluginActionReceiver" android:permission="com.voicecontrolapp.klets.api.EXECUTE_PLUGIN">
@@ -42,18 +45,15 @@
 			</intent-filter>
 		</receiver>
 
-		<!-- Provider used for plugin custom data type
-		<provider com.voicecontrolapp.pluginpack.provider.CustomTypeProvideromTypeProvider" android:authorities="com.example.testandroid.custom_type"
+		<!-- Provider used for sound profile data type -->
+		<provider android:name="com.voicecontrolapp.pluginpack.action.sound.provider.SoundProfileTypeProvider" android:authorities="com.voicecontrolapp.pluginpack.sound.profile_type"
 			android:exported="true" android:permission="com.voicecontrolapp.klets.api.QUERY_TYPE">
 		</provider>
-		-->
 
 		<!-- Metadata for action definitions -->
 		<meta-data android:name="voiceControlActions" android:resource="@xml/action_definitions"/>
 
 		<!-- Metadata for plugin data type definitions -->
-		<!-- 
 		<meta-data android:name="voiceControlTypes" android:resource="@xml/type_definitions" />
-		-->
 	</application>
 </manifest>

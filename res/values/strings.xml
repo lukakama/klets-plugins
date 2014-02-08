@@ -16,6 +16,8 @@
 	<string name="title_user_support">User support</string>
 	
 	<string name="default_languages" translatable="false">it,en</string>
+	
+	<string name="placesLanguage">en</string>
 
 	<!-- Foursquare action resources -->
 	<string name="action_foursquare_name">Foursquare</string>
@@ -76,4 +78,171 @@ Examples:\n
 	<string name="action_contact_param_contact_request">Please, tell me the name of the contact to open.</string>
 	<string name="action_contact_param_contact_notValid">I\'m sorry, but I didn\'t found a valid contact with the name \"%1$s\".</string>
 	<string name="action_contact_choose_contact_name">Which contact should I need to open?</string>
+	
+	<!-- Weather action resources -->
+	<string-array name="action_weather_commands" tools:ignore="InconsistentArrays">
+		<item>check the weather</item>
+		<item>check the weather on [DATE]</item>
+		<item>check the weather [PLACE_NAME]</item>
+		<item>check the weather [PLACE_NAME] on [DATE]</item>
+	</string-array>
+	<string name="action_weather_name">Weather</string>
+	<string name="action_weather_hint">check the weather for [place name]</string>
+	<string name="action_weather_help">Allows to check for the weather.\n
+\n
+Examples:\n
+\"<b>check the weather for</b> Rome\"</string>
+
+	<string name="action_weather_param_place_name_help">The place to check</string>
+	<string name="action_weather_param_place_name_sample">Rome</string>
+
+	<string name="action_weather_param_date_help">Date for weather forecast</string>
+	<string name="action_weather_param_date_sample">tomorrow</string>
+	
+	<string name="action_weather_language">en</string>
+	
+	<string name="action_weather_error_gps">Sorry, in order to check the weather, you need to enable the GPS.</string>
+	<string name="action_weather_generic_error">Sorry, an error occurred while performing the weather command. Action aborted.</string>
+	<string name="action_weather_select_place">Which place do you want to check?</string>
+	<string name="action_weather_no_places">Sorry, no places found with the name \'%1$s\'</string>
+	<string name="action_weather_not_location_found">I\'m sorry, but I was not able to find your current location. Plase try again later.</string>
+	
+	<string name="action_weather_forecast_today">Forecast weather for today in %1$s is: %2$s</string>
+	<string name="action_weather_forecast_tomorrow">Forecast weather for tomorrow in %1$s is: %2$s</string>
+	<string name="action_weather_forecast_date">Forecast weather on %1$te %1$tB %1$tY in %2$s is: %3$s</string>
+	
+	
+	<!-- List extracted from http://www.worldweatheronline.com/feed/wwoConditionCodes.txt -->
+	<string-array name="action_weather_codes">
+		<item>395|moderate or heavy snow in area with thunder</item>
+		<item>392|patchy light snow in area with thunder</item>
+		<item>389|moderate or heavy rain in area with thunder</item>
+		<item>386|patchy light rain in area with thunder</item>
+		<item>377|moderate or heavy showers of ice pellets</item>
+		<item>374|light showers of ice pellets</item>
+		<item>371|moderate or heavy snow showers</item>
+		<item>368|light snow showers</item>
+		<item>365|moderate or heavy sleet showers</item>
+		<item>362|light sleet showers</item>
+		<item>359|torrential rain shower</item>
+		<item>356|moderate or heavy rain shower</item>
+		<item>353|light rain shower</item>
+		<item>350|ice pellets</item>
+		<item>338|heavy snow</item>
+		<item>335|patchy heavy snow</item>
+		<item>332|moderate snow</item>
+		<item>329|patchy moderate snow</item>
+		<item>326|light snow</item>
+		<item>323|patchy light snow</item>
+		<item>320|moderate or heavy sleet</item>
+		<item>317|light sleet</item>
+		<item>314|moderate or heavy freezing rain</item>
+		<item>311|light freezing rain</item>
+		<item>308|heavy rain</item>
+		<item>305|heavy rain at times</item>
+		<item>302|moderate rain</item>
+		<item>299|moderate rain at times</item>
+		<item>296|light rain</item>
+		<item>293|patchy light rain</item>
+		<item>284|heavy freezing drizzle</item>
+		<item>281|freezing drizzle</item>
+		<item>266|light drizzle</item>
+		<item>263|patchy light drizzle</item>
+		<item>260|freezing fog</item>
+		<item>248|fog</item>
+		<item>230|blizzard</item>
+		<item>227|blowing snow</item>
+		<item>200|thundery outbreaks in nearby</item>
+		<item>185|patchy freezing drizzle nearby</item>
+		<item>182|patchy sleet nearby</item>
+		<item>179|patchy snow nearby</item>
+		<item>176|patchy rain nearby</item>
+		<item>143|mist</item>
+		<item>122|overcast</item>
+		<item>119|cloudy</item>
+		<item>116|partly cloudy</item>
+		<item>113|clear and sunny</item>
+	</string-array>
+	
+	<!-- Audio actions -->
+	<string-array name="action_sound_volume_up_commands" tools:ignore="InconsistentArrays">
+		<item>raise volume</item>
+		<item>raise the volume</item>
+		<item>volume up</item>
+	</string-array>
+	<string name="action_sound_volume_up_name">Audio - Volume up</string>
+	<string name="action_sound_volume_up_hint">raise volume</string>
+	<string name="action_sound_volume_up_help">Raise music, system and alarm volumes.\n
+\n
+Examples:\n
+\"<b>raise volume</b>\"</string>
+
+	<string-array name="action_sound_volume_down_commands" tools:ignore="InconsistentArrays">
+		<item>lower volume</item>
+		<item>lower the volume</item>
+		<item>volume down</item>
+	</string-array>
+	<string name="action_sound_volume_down_name">Audio - Volume down</string>
+	<string name="action_sound_volume_down_hint">lower volume</string>
+	<string name="action_sound_volume_down_help">Lower music, system and alarm volumes.\n
+\n
+Examples:\n
+\"<b>lower volume</b>\"</string>
+
+
+	<string-array name="action_sound_volume_set_commands" tools:ignore="InconsistentArrays">
+		<item>set volume</item>
+		<item>set volume to [VOLUME]</item>
+	</string-array>
+	<string name="action_sound_volume_set_name">Audio - Set volume level</string>
+	<string name="action_sound_volume_set_hint">set volume to [volume level]</string>
+	<string name="action_sound_volume_set_help">Set music, system and alarm volumes to a value from 0 (minimum) to 100 (maximum).\n
+\n
+Examples:\n
+\"<b>set volume to</b> 90\"</string>
+
+	<string name="action_sound_volume_set_param_volume_help">The volume level (from 0 to 100)</string>
+	<string name="action_sound_volume_set_param_volume_sample">90</string>
+	<string name="action_sound_volume_set_param_volume_request">Tell me the level from 0 to 100.</string>
+	
+
+	<string-array name="action_sound_volume_max_commands" tools:ignore="InconsistentArrays">
+		<item>volume maximum</item>
+		<item>volume max</item>
+		<item>volume to maximum</item>
+		<item>volume to max</item>
+	</string-array>
+	<string name="action_sound_volume_max_name">Audio - Set volume to max</string>
+	<string name="action_sound_volume_max_hint">volume max</string>
+	<string name="action_sound_volume_max_help">Set music, system and alarm volumes to maximum.\n
+\n
+Examples:\n
+\"<b>Volume max</b>\"</string>
+	
+
+	<string-array name="action_sound_profile_set_commands" tools:ignore="InconsistentArrays">
+		<item>set audio profile to [PROFILE]</item>
+		<item>set [PROFILE] profile</item>
+		<item>enable [PROFILE] profile</item>
+	</string-array>
+	<string name="action_sound_profile_set_name">Audio - Set profile</string>
+	<string name="action_sound_profile_set_hint">set audio profile to [profile]</string>
+	<string name="action_sound_profile_set_help">Set the audio profile to normal, silent or vibrate.\n
+\n
+Examples:\n
+\"<b>set</b> silent <b>profile</b>\"\n
+\"<b>enable</b> normal <b>profile</b>\"\n
+\"<b>set audio profile to</b> vibrate\"</string>
+
+	<string name="action_sound_profile_set_param_profile_help">The profile to set among normal, silent and vibrate</string>
+	<string name="action_sound_profile_set_param_profile_sample">normal</string>
+	<string name="action_sound_profile_set_param_profile_request">Tell me the audio profile to set.</string>
+	
+	<string name="action_sound_profile_set_param_profile_val_silent">silent</string>
+	<string name="action_sound_profile_set_param_profile_val_vibrate">vibrate</string>
+	<string name="action_sound_profile_set_param_profile_val_normal">normal</string>
+	
+	
+	<string name="action_sound_volume_confirm_message">Volume changed</string>
+	<string name="action_sound_volume_confirm_message">Profile set</string>
 </resources>
