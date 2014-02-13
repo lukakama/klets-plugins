@@ -101,15 +101,17 @@ Examples:\n
 	
 	<string name="action_weather_language">en</string>
 	
+	<string name="action_weather_date_exceed_maximum">I\'m sorry, but I can\'t check weather forecast farther than 5 days since now like on %1$te %1$tB %1$tY</string>
+	<string name="action_weather_date_past">I\'m sorry, but I can\'t check weather forecast in the past like on %1$te %1$tB %1$tY</string>
 	<string name="action_weather_error_gps">Sorry, in order to check the weather, you need to enable the GPS.</string>
 	<string name="action_weather_generic_error">Sorry, an error occurred while performing the weather command. Action aborted.</string>
 	<string name="action_weather_select_place">Which place do you want to check?</string>
 	<string name="action_weather_no_places">Sorry, no places found with the name \'%1$s\'</string>
 	<string name="action_weather_not_location_found">I\'m sorry, but I was not able to find your current location. Plase try again later.</string>
 	
-	<string name="action_weather_forecast_today">Forecast weather for today in %1$s is: %2$s</string>
-	<string name="action_weather_forecast_tomorrow">Forecast weather for tomorrow in %1$s is: %2$s</string>
-	<string name="action_weather_forecast_date">Forecast weather on %1$te %1$tB %1$tY in %2$s is: %3$s</string>
+	<string name="action_weather_forecast_today">Forecast weather for today in %1$s is: %2$s. Weather data provided by World Weather Online.</string>
+	<string name="action_weather_forecast_tomorrow">Forecast weather for tomorrow in %1$s is: %2$s. Weather data provided by World Weather Online.</string>
+	<string name="action_weather_forecast_date">Forecast weather on %1$te %1$tB %1$tY in %2$s is: %3$s. Weather data provided by World Weather Online.</string>
 	
 	
 	<!-- List extracted from http://www.worldweatheronline.com/feed/wwoConditionCodes.txt -->

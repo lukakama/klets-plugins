@@ -37,7 +37,7 @@ Esempi:\n
 	
 	<string name="action_foursquare_error_connect">Mi dispiace, ma per fare il checkin devi prima connettere questo plugin a Foursquare.</string>
 	<string name="action_foursquare_error_gps">Mi dispiace, ma per fer il checkin devi abilitare il GPS.</string>
-	<string name="action_foursquare_generic_error">Mi dispiace, ma si è verificaro un errore durante l\'esecuzione del comando. L\'azione è stata annullata.</string>
+	<string name="action_foursquare_generic_error">Mi dispiace, ma si è verificato un errore durante l\'esecuzione del comando. L\'azione è stata annullata.</string>
 	<string name="action_foursquare_api_error">Mi dispiace, ma si è verificato un errore in Foursquare. Per favore, riprova più tardi.</string>
 	<string name="action_foursquare_api_access_error">Mi dispiace, ma l\'autorizzazione di accesso a Foursquare è scaduta. Per usare il comando, devi ri-connettere il plugin a Foursquare.</string>
 	<string name="action_foursquare_complete">Checkin per \'%1$s\' effettuato con successo.</string>
@@ -78,7 +78,7 @@ Esempi:\n
 	<string name="action_contact_choose_contact_name">Which contact should I need to open?</string>
 	
 	<!-- Weather action resources -->
-	<string name="action_weather_name">Previsioni</string>
+	<string name="action_weather_name">Meteo</string>
 	<string name="action_weather_hint">meteo di [place name]</string>
 	<string name="action_weather_help">Consente di controllare le previsioni del tempo.\n
 \n
@@ -115,17 +115,19 @@ Esempi:\n
 	<string name="action_weather_param_date_sample">domani</string>
 	
 	<string name="action_weather_language">it</string>
-	
+
+	<string name="action_weather_date_exceed_maximum">Mi dispiace, ma non posso controllare il meteo oltre i 5 giorni da oggi come per il %1$te %1$tB %1$tY</string>
+	<string name="action_weather_date_past">Mi dispiace, ma non posso cotrollare il meteo nel passato come per il %1$te %1$tB %1$tY</string>	
 	<string name="action_weather_error_gps">Mi dispiace, ma per controllare il meteo devi attivare il GPS.</string>
-	<string name="action_weather_generic_error">Mi dispiace, ma si è verificaro un errore durante l\'esecuzione del comando. L\'azione è stata annullata.</string>
+	<string name="action_weather_generic_error">Mi dispiace, ma si è verificato un errore durante l\'esecuzione del comando. L\'azione è stata annullata.</string>
 	<string name="action_weather_select_place">Quale luogo vuoi controllare?</string>
 	<string name="action_weather_no_places">Mi dispiace, ma non ho trovvato nessun luogo con il nome \'%1$s\'</string>
 	<string name="action_weather_not_location_found">Mi dispiace, ma non sono riuscito a trovare la tua posizione corrente. Per favore, riprova più tardi.</string>
 	
 	
-	<string name="action_weather_forecast_today">Le previsioni del tempo di oggi per %1$s sono: %2$s</string>
-	<string name="action_weather_forecast_tomorrow">Le previsioni del tempo di domani per %1$s sono: %2$s</string>
-	<string name="action_weather_forecast_date">Le previsioni del tempo del %1$te %1$tB %1$tY per %2$s sono: %3$s</string>
+	<string name="action_weather_forecast_today">Le previsioni del tempo di oggi per %1$s sono: %2$s. Previsioni fornite da World Weather Online tradotte da KLets plugin pack.</string>
+	<string name="action_weather_forecast_tomorrow">Le previsioni del tempo di domani per %1$s sono: %2$s. Previsioni fornite da World Weather Online tradotte da KLets plugin pack.</string>
+	<string name="action_weather_forecast_date">Le previsioni del tempo del %1$te %1$tB %1$tY per %2$s sono: %3$s. Previsioni fornite da World Weather Online tradotte da KLets plugin pack.</string>
 	
 	<!-- List extracted from http://www.worldweatheronline.com/feed/wwoConditionCodes.txt -->
 	<string-array name="action_weather_codes">

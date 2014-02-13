@@ -39,7 +39,6 @@
 		
 		<weatherKey>YOUR_WORLD_WEATHER_ONLINE_API_KEY</weatherKey>
 			
-			
 		Set these to sign the APK, or comment out the sign-jar plugin.
 		
 		<signKeystore>YOUR_KEYSTORE_PATH</signKeystore>

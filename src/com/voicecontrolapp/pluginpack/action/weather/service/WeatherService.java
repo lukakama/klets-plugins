@@ -95,6 +95,28 @@ public class WeatherService extends IntentService {
 			Date date = null;
 			if (parameters.containsKey(WeatherPluginAction.PARAM_DATE)) {
 				date = (Date) parameters.getSerializable(WeatherPluginAction.PARAM_DATE);
+				
+				
+				// Actually, World Weather Online supports forecasts only for the next 5 days for free accounts, so we need
+				// to validate the date, also to check if it is not in the past.
+				
+				Date today = new Date();
+				
+				if (DateUtils.getDatePart(date).before(DateUtils.getDatePart(today))) {
+					Bundle resultExtras = new Bundle();
+					resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, String.format(getString(R.string.action_weather_date_past), date));
+					sendResult(asyncPendingIntent, KletsPluginApi.ACTION_RESULT_OK, resultExtras);
+					
+					return;
+
+				} else if (DateUtils.daysBetween(today, date) > 5) {
+					Bundle resultExtras = new Bundle();
+					resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, String.format(getString(R.string.action_weather_date_exceed_maximum), date));
+					sendResult(asyncPendingIntent, KletsPluginApi.ACTION_RESULT_OK, resultExtras);
+					
+					return;
+				}
+				
 			}
 			
 			if ("GET_CURRENT_PLACE".equals(intent.getAction())) {
@@ -169,7 +191,7 @@ public class WeatherService extends IntentService {
 				return;
 			} else if (listener.location == null) {
 				Bundle resultExtras = new Bundle();
-				resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, getString(R.string.action_foursquare_not_location_found));
+				resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, getString(R.string.action_weather_not_location_found));
 				sendResult(asyncPendingIntent, KletsPluginApi.ACTION_RESULT_OK, resultExtras);
 				
 				return;
@@ -183,7 +205,7 @@ public class WeatherService extends IntentService {
 			List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
 			if (addresses.size() == 0) {
 				Bundle resultExtras = new Bundle();
-				resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, getString(R.string.action_foursquare_not_location_found));
+				resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, getString(R.string.action_weather_not_location_found));
 				sendResult(asyncPendingIntent, KletsPluginApi.ACTION_RESULT_OK, resultExtras);
 				
 				return;
@@ -218,7 +240,7 @@ public class WeatherService extends IntentService {
 				return;
 				
 			// Handle multiple results
-			/* FIXME: Actually turned off, as the first result is precise enough...
+			/* FIXME: Actually turned off, as the first result is actually enough...
 			} else if (locations.results.size() > 1) {
 				Bundle resultExtras = new Bundle();
 				
@@ -342,7 +364,7 @@ public class WeatherService extends IntentService {
 		Bundle resultExtras = new Bundle();
 		
 		// Handling error and quit.
-		resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, getString(R.string.action_foursquare_generic_error));
+		resultExtras.putString(KletsPluginApi.EXTRA_MESSAGE, getString(R.string.action_weather_generic_error));
 		
 		sendResult(asyncPendingIntent, KletsPluginApi.ACTION_RESULT_OK, resultExtras);
 	}
