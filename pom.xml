@@ -15,7 +15,7 @@
 
 	<groupId>com.voicecontrolapp</groupId>
 	<artifactId>klets-pluginpack</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 
 	<packaging>apk</packaging>
 
